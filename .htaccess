@@ -1,0 +1,45 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /php/c-linktechnology/
+
+
+    RewriteRule ^$ index.php [L]
+    RewriteRule ^index/?$ index.php [L]
+    RewriteRule ^about/?$ about.php [L]
+    RewriteRule ^services/?$ services.php [L]
+    RewriteRule ^contact/?$ contact.php [L]
+    RewriteRule ^inquiry/?$ inquiry.php [L]
+
+
+    # -----------------------------
+    # 1. Product Details (3-level URL)
+    # /parentCategory-slug/category-slug/product-slug
+    # -----------------------------
+    #RewriteRule ^([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/?$ product-details.php?category=$1&slug=$2 [L,QSA]
+    # /parent-slug/category-slug/product-slug
+    RewriteRule ^([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/?$ product-details.php?parent=$1&category=$2&slug=$3 [L,QSA]
+    # -----------------------------
+    # 2. Product Category (1-level URL)
+    # /category-slug
+    # -----------------------------
+    RewriteRule ^([a-zA-Z0-9-_]+)/?$ products.php?slug=$1 [L,QSA]
+
+    # -----------------------------
+    # 3. Redirect OLD URLs → NEW SEO URLs
+    # -----------------------------
+
+    # /products?slug=abc → /abc
+    RewriteCond %{THE_REQUEST} \s/products\?slug=([^&\s]+) [NC]
+    RewriteRule ^products$ %1? [R=301,L]
+
+    # /products/product-details/abc → /category/abc (dynamic not possible fully)
+    # you will handle category in PHP if needed
+
+    # -----------------------------
+    # 4. Remove .php extension (keep last)
+    # -----------------------------
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^([^/.]+)/?$ $1.php [L]
+
+</IfModule>
