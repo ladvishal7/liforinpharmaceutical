@@ -16,7 +16,7 @@
     <!-- BEGIN HEAD -->
     <head>
         <meta charset="utf-8" />
-        <title>Admin | Service</title>
+        <title>Admin | Global Presence</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
@@ -67,7 +67,7 @@
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <a href="service_index.php">Service</a>
+                                <a href="service_index.php">Global Presence</a>
                                 <!--<i class="fa fa-circle"></i>-->
                             </li>
                             <li>
@@ -108,7 +108,7 @@
                     </div>
                     <!-- END PAGE BAR -->
                     <!-- BEGIN PAGE TITLE-->
-                    <h3 class="page-title">Service Index
+                    <h3 class="page-title">Global Presence Index
                         <small></small>
                     </h3>
                     <!-- END PAGE TITLE-->
@@ -116,12 +116,12 @@
                    <div class="row">
 						<div class="col-md-12">
 						<div class="text-right" style="padding:5px;">
-							<a href="service_add.php" class="btn green">Add</a>
+							<!-- <a href="service_add.php" class="btn green">Add</a> -->
 						</div>
 							<div class="portlet box blue">
                                 <div class="portlet-title">
                                     <div class="caption">
-                                        <i class="fa fa-image"></i>Service List </div>
+                                        <i class="fa fa-image"></i>Global Presence List </div>
                                     <div class="tools">
                                         <a href="javascript:;" class="collapse"> </a>
                                         <!--<a href="#portlet-config" data-toggle="modal" class="config"> </a>
@@ -136,7 +136,7 @@
                                                 <tr>
                                                     <th> No </th>
                                                     <th> Name </th>
-                                                    <th> image </th>
+                                                    <!-- <th> image </th> -->
                                                     <!-- <th> Description </th> -->
                                                     <th> Edit </th>
                                                     <th> Delete </th>
@@ -152,8 +152,8 @@
                                                 <tr>
                                                     <td> <?php echo $n ?> </td>
                                                     <td> <?php echo $event_fetch['news_name'] ?> </td>
-                                                    <td><img src="../images/<?php echo $event_fetch['news_img']; ?>" width="90px"></td>
-                                                    <!-- <td> <?php //echo $event_fetch['event_description'] ?> </td> -->
+                                                    <!-- <td><img src="../images/<?php echo $event_fetch['news_img']; ?>" width="90px"></td> -->
+                                                    <!-- <td> <?php //  echo $event_fetch['news_description'] ?> </td> -->
 													<td><a href="service_update.php?id=<?php echo $event_fetch['id']; ?>"><i class="fa fa-pencil-square-o" style="font-size:30px;color:green;" aria-hidden="true"></i></a></td>
                                                     <td><a href="service_dlt.php?id=<?php echo $event_fetch['id']; ?>" onclick="return confirm('Are You Sure ?');"><i class="fa fa-trash-o" style="font-size:30px;color:red;" aria-hidden="true"></i></a></td>
 													<td><a class="" href="service_index1.php?id1=<?php echo $event_fetch["id"];?>" ><?php if($event_fetch["is_active"] == 0){ echo "<img src='images/eye.png' style='width:25px;'>"; }else if($event_fetch["is_active"]==1){ echo "<img src='images/deactive.png' style='width:25px;'>"; } ?></a></td>

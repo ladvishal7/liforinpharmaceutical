@@ -18,7 +18,7 @@
     <!-- BEGIN HEAD -->
     <head>
         <meta charset="utf-8" />
-        <title>Admin | Service</title>
+        <title>Admin | Global Presence</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
@@ -69,11 +69,11 @@
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <a href="service_index.php">Service Index</a>
+                                <a href="service_index.php">Global Presence Index</a>
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <span>Service Update</span>
+                                <span>Global Presence Update</span>
                             </li>
                         </ul>
                         <div class="page-toolbar">
@@ -99,7 +99,7 @@
 							<div class="portlet box green">
 								<div class="portlet-title">
 									<div class="caption">
-										<i class="fa fa-list"></i>Service Update </div>
+										<i class="fa fa-list"></i>Global Presence Update </div>
 									<div class="tools">
 										<a href="javascript:;" class="collapse"> </a>
 										<a href="#portlet-config" data-toggle="modal" class="config"> </a>
@@ -113,12 +113,12 @@
                                         <input type="hidden" name="id" value="<?php echo $id; ?>">
 										<div class="form-body">
 											<div class="form-group">
-												<label class="col-md-3 control-label"> Service Name</label>
+												<label class="col-md-3 control-label"> Global Presence Name</label>
 												<div class="col-md-6">
 													<input type="text" name="name" value="<?php echo $news_row['news_name']; ?>" class="form-control input-circle" required>
 												</div>
 											</div>
-											<div class="form-group">
+											<?php /*<div class="form-group">
 												<label class="col-md-3 control-label">Image</label>
 												<div class="col-md-6">
 													<input type="file" name="file"  class="form-control input-circle" >
@@ -133,7 +133,7 @@
 													<input type="hidden" name="icon_old"  value="<?php echo $news_row['news_caption']; ?>" >
                                                     <img src="../images/<?php echo $news_row['news_caption']; ?>" width="90px"/>
 												</div>
-											</div>
+											</div> */ ?>
 											<div class="form-group">
 												<input type="hidden" name="ab_id" value="<?php echo $id; ?>">
 												<label class="col-md-3 control-label">Description</label>

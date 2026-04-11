@@ -17,7 +17,7 @@
     <head>
 		
         <meta charset="utf-8" />
-        <title>Admin | Testimonial</title>
+        <title>Admin | Team</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
@@ -71,11 +71,11 @@
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <a href="staff_index.php">Testimonial Index</a>
+                                <a href="staff_index.php">Team Index</a>
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <span>Testimonial Add</span>
+                                <span>Team Add</span>
                             </li>
                         </ul>
                         <div class="page-toolbar">
@@ -101,7 +101,7 @@
 							<div class="portlet box green">
 									<div class="portlet-title">
 										<div class="caption">
-											<i class="fa fa-list"></i>Testimonial Add </div>
+											<i class="fa fa-list"></i>Team Add </div>
 										<div class="tools">
 											<a href="javascript:;" class="collapse"> </a>
 											<a href="#portlet-config" data-toggle="modal" class="config"> </a>
@@ -114,38 +114,38 @@
 											<form action="staff_addcode" class="form-horizontal" method="post" enctype="multipart/form-data">
 												<div class="form-body">
 													<div class="form-group">
-														<label class="col-md-3 control-label">Testimonial Name</label>
+														<label class="col-md-3 control-label">Team Name</label>
 														<div class="col-md-6">
 															<input type="text" name="name"  class="form-control input-circle" required>
 														</div>
 													</div>
 													<div class="form-group">
-														<label class="col-md-3 control-label">Testimonial Designation</label>
+														<label class="col-md-3 control-label">Team Designation</label>
 														<div class="col-md-6">
 															<input type="text" name="designation"  class="form-control input-circle" required>
 														</div>
 													</div>
-													<div class="form-group">
-														<label class="col-md-3 control-label">Testimonial Detail</label>
+													<!--<div class="form-group">
+														<label class="col-md-3 control-label">Team Detail</label>
 														<div class="col-md-6">
 															<textarea row="2" name="staff_info"  class="form-control input-circle" required></textarea>
 														</div>
-													</div>
+													</div> -->
 													<div class="form-group">
 														<label class="col-md-3 control-label">Select Image</label>
 														
 														<div class="col-md-6">
 															<input type="file" class="from-control input-circle" name="file" required><br>
-															<caption>Image Size : 370 * 431</caption>
+															<!-- <caption>Image Size : 370 * 431</caption> -->
 														</div>
                                                     </div>
                                                         <div class="form-group">
-                                                            <label class="col-md-3 control-label">Rating</label>
+                                                            <label class="col-md-3 control-label">Facebook</label>
                                                             <div class="col-md-6">
-                                                                <input type="number" name="facebook"  class="form-control input-circle" >
+                                                                <input type="text" name="facebook"  class="form-control input-circle" >
                                                             </div>
                                                         </div>
-                                                        <!-- <div class="form-group">
+                                                         <div class="form-group">
                                                             <label class="col-md-3 control-label">twitter</label>
                                                             <div class="col-md-6">
                                                                 <input type="text" name="twitter"  class="form-control input-circle" >
@@ -156,7 +156,7 @@
                                                             <div class="col-md-6">
                                                                 <input type="text" name="linkedin"  class="form-control input-circle" >
                                                             </div>
-                                                        </div> -->
+                                                        </div> 
 													</div>
 													<div class="form-actions">
 													<div class="row">

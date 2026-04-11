@@ -1,5 +1,5 @@
 <?php
-	$conn = mysqli_connect("localhost","root","","c-linktechnology_db");
+	$conn = mysqli_connect("localhost","root","","liforin_pharmaceutical_db");
 	if(empty($conn)){
 		?>
 		<script type="text/javascript" language="JavaScript">

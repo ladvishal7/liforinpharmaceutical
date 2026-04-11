@@ -18,7 +18,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Admin | Testimonial</title>
+        <title>Admin | Team</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
@@ -72,7 +72,7 @@
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <a href="staff_index.php">Testimonial Index</a>
+                                <a href="staff_index.php">Team Index</a>
                                 <!--<i class="fa fa-circle"></i>-->
                             </li>
                             <li>
@@ -113,7 +113,7 @@
                     </div>
                     <!-- END PAGE BAR -->
                     <!-- BEGIN PAGE TITLE-->
-                    <h3 class="page-title">Testimonial Index
+                    <h3 class="page-title">Team Index
                         <small></small>
                     </h3>
                     <!-- END PAGE TITLE-->
@@ -127,7 +127,7 @@
 							<div class="portlet box blue">
                                 <div class="portlet-title">
                                     <div class="caption">
-                                        <i class="fa fa-image"></i>Testimonial List </div>
+                                        <i class="fa fa-image"></i>Team List </div>
                                     <div class="tools">
                                         <a href="javascript:;" class="collapse"> </a>
                                         <!--<a href="#portlet-config" data-toggle="modal" class="config"> </a>
@@ -141,9 +141,9 @@
                                             <thead>
                                                 <tr>
                                                     <th> No </th>
-                                                    <th> Testimonial Name </th>
-                                                    <th> Testimonial Designation </th>
-                                                    <!-- <th> Testimonial Image </th> -->
+                                                    <th> Team Name </th>
+                                                    <th> Team Designation </th>
+                                                    <!-- <th> Team Image </th> -->
                                                     <th> Edit </th>
                                                     <th> Delete </th>
 													<th> Status</th>

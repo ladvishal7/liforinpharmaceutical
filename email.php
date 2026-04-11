@@ -6,7 +6,7 @@
 
 // Process form submission
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $name = $_POST["fname"] .' '. $_POST["lname"];
+    $name = $_POST["name"];
     $email = $_POST["email"]??'';
     $phone = $_POST['phone']??'';
     $message = $_POST["message"]??'';
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             //echo "Message has been sent successfully";
             //$_SESSION['message'] = 'Mail successfully send!';
 			echo '<script>alert("Thank you for contact.");
-				location.href="index.html";
+				location.href="index";
 				</script>';
             // return  200;
         }

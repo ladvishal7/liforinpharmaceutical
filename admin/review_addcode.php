@@ -6,10 +6,11 @@ session_start();
 	$name = $_POST['name'];
 	$review_sub = $_POST['review_sub'] ?? null;
 	$review = $_POST['review'] ?? null;
+	$file = $_POST['file'] ?? null;
 
-	include "compressfunction.php";	
-	$folder="../images/testimonial/";
-	$filename2= compress($folder);	
+	// include "compressfunction.php";	
+	// $folder="../images/testimonial/";
+	// $filename2= compress($folder);	
 			
 	$date=date("Y-m-d h:i:s");	
 	$insert = "INSERT INTO review_master ( review_img, review_name , review_sub , review_text, is_active , is_deleted, insert_at) VALUES('$filename2', '$name' , '$review_sub','$review', 0 , 0 , '$date')";

@@ -5,7 +5,12 @@
       header('Location: index.php');
   }
 	include 'connect.php'; // include connection
-	$event=mysqli_query($conn,"select * from event_master where is_deleted = 0 ");
+    $type= $_GET['type'] ?? 0;
+    if($type == 1){
+        $event=mysqli_query($conn,"select * from event_master where event_description = 1  AND is_deleted = 0 ");
+    }else{
+        $event=mysqli_query($conn,"select * from event_master where  event_description = 0  AND is_deleted = 0 ");
+    }
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
@@ -116,7 +121,7 @@
                    <div class="row">
 						<div class="col-md-12">
 						<div class="text-right" style="padding:5px;">
-							<a href="event_add.php" class="btn green">Add</a>
+							<a href="event_add.php?type=<?= $type ?>" class="btn green">Add</a>
 						</div>
 							<div class="portlet box blue">
                                 <div class="portlet-title">
@@ -148,15 +153,16 @@
 												$n = 1;
 												while($event_fetch = mysqli_fetch_assoc($event)){
 													// $sid = $event_fetch['gl_id'];
+                                                    
 											?>
                                                 <tr>
                                                     <td> <?php echo $n ?> </td>
                                                     <td> <?php echo $event_fetch['event_name'] ?> </td>
                                                     <td><img src="../images/<?php echo $event_fetch['event_img']; ?>" width="90px"></td>
                                                     <!-- <td> <?php //echo $event_fetch['event_description'] ?> </td> -->
-													 <td><a href="event_update.php?id=<?php echo $event_fetch['id']; ?>"><i class="fa fa-pencil-square-o" style="font-size:30px;color:green;" aria-hidden="true"></i></a></td>
-                                                    <td><a href="event_dlt.php?id=<?php echo $event_fetch['id']; ?>" onclick="return confirm('Are You Sure ?');"><i class="fa fa-trash-o" style="font-size:30px;color:red;" aria-hidden="true"></i></a></td>
-													<td><a class="" href="event_index1.php?id1=<?php echo $event_fetch["id"];?>" ><?php if($event_fetch["is_active"] == 0){ echo "<img src='images/eye.png' style='width:25px;'>"; }else if($event_fetch["is_active"]==1){ echo "<img src='images/deactive.png' style='width:25px;'>"; } ?></a></td>
+													 <td><a href="event_update.php?id=<?php echo $event_fetch['id']; ?>&type=<?= $type ?>"><i class="fa fa-pencil-square-o" style="font-size:30px;color:green;" aria-hidden="true"></i></a></td>
+                                                    <td><a href="event_dlt.php?id=<?php echo $event_fetch['id']; ?>&type=<?= $type ?>" onclick="return confirm('Are You Sure ?');"><i class="fa fa-trash-o" style="font-size:30px;color:red;" aria-hidden="true"></i></a></td>
+													<td><a class="" href="event_index1.php?id1=<?php echo $event_fetch["id"];?>&type=<?= $type ?>" ><?php if($event_fetch["is_active"] == 0){ echo "<img src='images/eye.png' style='width:25px;'>"; }else if($event_fetch["is_active"]==1){ echo "<img src='images/deactive.png' style='width:25px;'>"; } ?></a></td>
                                                 </tr>
                                                <?php 
 											      $n++;

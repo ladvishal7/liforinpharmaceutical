@@ -123,7 +123,7 @@
                                                     <div class="form-group">
                                                         <label class="col-md-3 control-label">Descriptions *</label>
                                                         <div class="col-md-6">
-                                                             <textarea  name="caption" class="form-control input-circle ckeditor"  required></textarea>
+                                                             <textarea  name="caption" class="form-control input-circle "  required></textarea>
                                                              <!-- <small>Note: entry line </small> -->
                                                         </div>
                                                     </div>  
@@ -145,7 +145,7 @@
 														<div class="col-md-6">
 															<input type="text" name="sub_heading[]"  class="form-control input-circle" >
 														</div>
-													</div> -->
+													</div> 
                                                     <div class="form-group">
 														<label class="col-md-3 control-label">Add link *</label>
 														<div class="col-md-6">
@@ -157,7 +157,7 @@
 														<div class="col-md-6">
 															<input type="text" name="youtube"  class="form-control input-circle" value="" required>
 														</div>
-													</div>
+													</div> -->
                                                     
 													<div class="form-group">
 														<label class="col-md-3 control-label">Select Image *</label>

@@ -17,7 +17,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Admin | News Updates</title>
+        <title>Admin | Careers Updates</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
@@ -72,11 +72,11 @@
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <a href="review_index.php">News Updates Index</a>
+                                <a href="review_index.php">Careers Updates Index</a>
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <span>News Updates Edit</span>
+                                <span>Careers Updates Edit</span>
                             </li>
                         </ul>
                         <div class="page-toolbar">
@@ -102,7 +102,7 @@
 							<div class="portlet box green">
 									<div class="portlet-title">
 										<div class="caption">
-											<i class="fa fa-list"></i>News Updates Edit </div>
+											<i class="fa fa-list"></i>Careers Updates Edit </div>
 										<div class="tools">
 											<a href="javascript:;" class="collapse"> </a>
 											<a href="#portlet-config" data-toggle="modal" class="config"> </a>
@@ -121,19 +121,25 @@
 															<input type="text" name="review_name" value="<?php echo $f['review_name'];?>" class="form-control input-circle" required>
 														</div>
 													</div>
-                                                    <!-- <div class="form-group">
-														<label class="col-md-3 control-label">Designation </label>
+                                                    <div class="form-group">
+														<label class="col-md-3 control-label">Time </label>
 														<div class="col-md-6">
 															<input type="text" name="review_sub"  class="form-control input-circle" value="<?php echo $f['review_sub'];?>"  >
 														</div>
-													</div> -->
+													</div>
                                                     <div class="form-group">
-														<label class="col-md-3 control-label">News Updates</label>
+														<label class="col-md-3 control-label">Country Name </label>
+														<div class="col-md-6">
+															<input type="text" name="file"  class="form-control input-circle" value="<?php echo $f['review_img']; ?>"  >
+														</div>
+													</div>
+                                                    <div class="form-group">
+														<label class="col-md-3 control-label">Careers Updates</label>
 														<div class="col-md-6">
                                                         <textarea name="review" class="form-control input-circle " cols="30" rows="3" required><?php echo $f['review_text']; ?></textarea>
 														</div>
 													</div>
-                                                    <div class="form-group">
+                                                    <?php /* <div class="form-group">
 														<label class="col-md-3 control-label">Select Image</label>
 														<div class="col-md-6">
 															<input type="file" class="from-control input-circle" name="file" ><br>
@@ -142,7 +148,7 @@
                                                             <img src="../images/<?php echo $f['review_img'];?>" width="120px" alt=" ">
                                                            
 														</div>
-													</div>
+													</div> */ ?>
 													<div class="form-actions">
 													<div class="row">
 														<div class="col-md-offset-3 col-md-9">

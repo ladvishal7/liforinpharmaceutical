@@ -68,7 +68,7 @@
                                 <li class="nav-item start ">
                                     <a href="staff_index.php" class="nav-link nav-toggle">
                                         <i class="fa fa-users"></i>
-                                        <span class="title">Testimonial</span>
+                                        <span class="title">Team</span>
                                         <!-- <span class="arrow"></span> -->
                                     </a>
                                 </li> 
@@ -85,7 +85,7 @@
                         <li class="nav-item start ">
                             <a href="service_index.php" class="nav-link ">
                                 <i class="icon-bulb"></i>
-                                <span class="title">Service</span>
+                                <span class="title">Global Presence</span>
                             </a>
                         </li>  
 
@@ -140,21 +140,29 @@
                             </a>
                         </li>
                         
-						<!-- <li class="nav-item start ">
-                            <a href="event_index.php" class="nav-link nav-toggle">
+						<li class="nav-item start ">
+                            <a href="event_index.php?type=0" class="nav-link nav-toggle">
                                 <i class="fa fa-envelope"></i>
-                                <span class="title">Global Certifications</span>
-                                <span class="arrow"></span>
+                                <span class="title">Our Certification</span>
+                                <!-- <span class="arrow"></span> -->
                             </a>
-                        </li> -->
+                        </li>
+
+						<li class="nav-item start ">
+                            <a href="event_index.php?type=1" class="nav-link nav-toggle">
+                                <i class="fa fa-envelope"></i>
+                                <span class="title">Clients logos</span>
+                                <!-- <span class="arrow"></span> -->
+                            </a>
+                        </li>
 						
-						<!-- <li class="nav-item start ">
+						<li class="nav-item start ">
                             <a href="review_index.php" class="nav-link nav-toggle">
                                 <i class="fa fa-envelope"></i>
-                                <span class="title"> Clients Review </span>
-                                <span class="arrow"></span>
+                                <span class="title"> Careers </span>
+                                <!-- <span class="arrow"></span> -->
                             </a>
-                        </li>  -->
+                        </li> 
 						<li class="nav-item start ">
                             <a href="contact_index.php" class="nav-link nav-toggle">
                                 <i class="fa fa-phone"></i>

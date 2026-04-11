@@ -6,10 +6,10 @@
 		return $query;
 	}
 
-	function services(){
+	function services($id){
 		global $conn;
-		$query=mysqli_query($conn,"select * from news_master where is_active = 0 ")or die(mysqli_error($conn));
-		return $query;
+		$query=mysqli_query($conn,"select * from news_master where is_active = 0 AND id = ".$id)or die(mysqli_error($conn));
+		return mysqli_fetch_assoc($query);
 	}
 	
 	function about_us($id){

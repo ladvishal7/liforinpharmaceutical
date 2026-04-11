@@ -6,6 +6,7 @@
 		header('Location: index.php');
 	}
 	$id = $_GET['id'];
+	$type = $_GET['type'];
 	$slider = mysqli_query($conn,"SELECT * FROM event_master WHERE id = '".$id."' ")or die(mysqli_error($conn));
 	$slider_fetch = mysqli_fetch_assoc($slider);	
 ?>
@@ -115,6 +116,7 @@
 												<label class="col-md-3 control-label">logo Name</label>
 												<div class="col-md-6">
 													<input type="hidden" name="id" value="<?php echo $id; ?>">
+													<input type="hidden" name="type" value="<?php echo $type; ?>">
 													<input type="text" name="name" value="<?php echo $slider_fetch['event_name']; ?>" class="form-control input-circle" required>
 												</div>
 											</div>

@@ -1,14 +1,27 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /php/c-linktechnology/
+    RewriteBase /php/liforinpharmaceutical/
 
 
     RewriteRule ^$ index.php [L]
     RewriteRule ^index/?$ index.php [L]
+    RewriteRule ^careers/?$ careers.php [L]
+    RewriteRule ^company-profile/?$ company-profile.php [L]
     RewriteRule ^about/?$ about.php [L]
     RewriteRule ^services/?$ services.php [L]
-    RewriteRule ^contact/?$ contact.php [L]
-    RewriteRule ^inquiry/?$ inquiry.php [L]
+    RewriteRule ^contact-us/?$ contact-us.php [L]
+    RewriteRule ^enquiry-now/?$ enquiry-now.php [L]
+    RewriteRule ^domestic-products/?$ domestic-products.php [L]
+    RewriteRule ^domestic-products/?$ domestic-products.php [L]
+    RewriteRule ^export-products/?$ export-products.php [L]
+    RewriteRule ^export-products/?$ export-products.php [L]
+    RewriteRule ^team/?$ team.php [L]
+    RewriteRule ^why-us/?$ why-us.php [L]
+    RewriteRule ^global-presence/?$ global-presence.php [L]
+    RewriteRule ^domestic-products/?$ domestic-products.php [L]
+    RewriteRule ^export-products/?$ export-products.php [L]
+    RewriteRule ^product-listing/?$ product-listing.php [L]
+    RewriteRule ^product_details/?$ product_details.php [L]
 
 
     # -----------------------------
@@ -28,11 +41,11 @@
     # 3. Redirect OLD URLs → NEW SEO URLs
     # -----------------------------
 
-    # /products?slug=abc → /abc
-    RewriteCond %{THE_REQUEST} \s/products\?slug=([^&\s]+) [NC]
-    RewriteRule ^products$ %1? [R=301,L]
+    # /product-listing?slug=abc → /abc
+    RewriteCond %{THE_REQUEST} \s/product-listing\?slug=([^&\s]+) [NC]
+    RewriteRule ^product-listing$ %1? [R=301,L]
 
-    # /products/product-details/abc → /category/abc (dynamic not possible fully)
+    # /product-listing/product-details/abc → /category/abc (dynamic not possible fully)
     # you will handle category in PHP if needed
 
     # -----------------------------

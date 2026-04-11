@@ -8,6 +8,7 @@ session_start();
 	// $description = $_POST['description'];
 	$caption = $_POST['caption'] ?? '';
 	$youtube = $_POST['youtube'] ?? '';
+	$link = $_POST['link'] ?? '';
 	
 	include "compressfunction.php";	
 	$folder = "../images/";

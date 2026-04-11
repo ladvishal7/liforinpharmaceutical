@@ -8,8 +8,8 @@
 		// $description = $_POST['description'] ?? '';
 		$caption = $_POST['caption'] ?? '';
 		$youtube = $_POST['youtube'] ?? '';
+		$link = $_POST['link'] ?? '';
 		
-		$link = $_POST['link'];
 		if(empty($_FILES['file']['name'])){	
 		 	$filename1 = $_POST['image'];
 		}else{	

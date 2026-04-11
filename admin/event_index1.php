@@ -2,7 +2,8 @@
 	include "connect.php";
 	session_start();
 	// $id = $_SESSION['user_id'];
-		$b=$_GET['id1'];
+	$b=$_GET['id1'];
+	$type=$_GET['type'];
 	 $query=mysqli_query($conn,"SELECT * FROM event_master WHERE id='$b'")or die(mysqli_error($conn));
 	 $array=mysqli_fetch_assoc($query);
 			
@@ -12,7 +13,7 @@
 					
 					//if($update1){
 					// echo "suceess";
-					header('location:event_index.php');
+					header('location:event_index.php?type='.$type);
 					// }else{
 					 //echo "fail";
 				//	}
@@ -21,7 +22,7 @@
 				$update1 = mysqli_query($conn,"UPDATE event_master SET is_active = 0 WHERE id = '".$b."'")or die(mysqli_error($conn));
 				 //if($update1){
 					// echo "suceess";
-					header('location:event_index.php');
+					header('location:event_index.php?type='.$type);
 					// }else{
 					// echo "fail";
 				// }

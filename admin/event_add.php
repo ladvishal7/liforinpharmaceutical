@@ -5,6 +5,7 @@
 	{
 		header('Location: index.php');
 	}
+    $type= $_GET['type'] ?? 0;
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
@@ -111,6 +112,7 @@
 											<div class="form-group">
 												<label class="col-md-3 control-label">logo Name</label>
 												<div class="col-md-6">
+													<input type="hidden" name="type"  value="<?= $type ?>" >
 													<input type="text" name="name"  class="form-control input-circle" required>
 												</div>
 											</div>
@@ -130,7 +132,7 @@
 											<div class="row">
 												<div class="col-md-offset-3 col-md-9">
 													<input type="submit" name="submit" value="Submit" class="btn btn-circle green">
-													<a href="event_index.php" class="btn btn-circle grey-salsa btn-outline">Cancel</a>
+													<a href="event_index.php?type<?= $type ?>" class="btn btn-circle grey-salsa btn-outline">Cancel</a>
 												</div>
 											</div>
 											</div>

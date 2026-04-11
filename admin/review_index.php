@@ -18,7 +18,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Admin | News Updates</title>
+        <title>Admin | Careers Updates</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
@@ -72,7 +72,7 @@
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <a href="#">News Updates Index</a>
+                                <a href="#">Careers Updates Index</a>
                                 <!--<i class="fa fa-circle"></i>-->
                             </li>
                             <li>
@@ -113,7 +113,7 @@
                     </div>
                     <!-- END PAGE BAR -->
                     <!-- BEGIN PAGE TITLE-->
-                    <h3 class="page-title">News Updates Index
+                    <h3 class="page-title">Careers Updates Index
                         <small></small>
                     </h3>
                     <!-- END PAGE TITLE-->
@@ -127,7 +127,7 @@
 							<div class="portlet box blue">
                                 <div class="portlet-title">
                                     <div class="caption">
-                                        <i class="fa fa-image"></i>News Updates List </div>
+                                        <i class="fa fa-image"></i>Careers Updates List </div>
                                     <div class="tools">
                                         <a href="javascript:;" class="collapse"> </a>
                                         <!--<a href="#portlet-config" data-toggle="modal" class="config"> </a>
@@ -142,7 +142,7 @@
                                                 <tr>
                                                     <th class="text-center"> No </th>
                                                     <th class="text-center"> Name </th>
-                                                    <th class="text-center"> News Updates </th>
+                                                    <th class="text-center"> Careers </th>
                                                     <th class="text-center"> Edit </th>
                                                     <th class="text-center"> Delete </th>
 													<th class="text-center"> Status</th>
@@ -152,6 +152,7 @@
 											<?php 
 												$n = 1;
 												while($event_fetch = mysqli_fetch_assoc($event)){
+                                                    
 													 // $sid = $event_fetch['gl_id'];
 											?>
                                                 <tr>

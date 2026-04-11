@@ -126,7 +126,7 @@
                                                      <div class="form-group">
                                                         <label class="col-md-3 control-label">Descriptions</label>
                                                         <div class="col-md-6">
-                                                             <textarea  name="caption" class="form-control input-circle ckeditor"  required><?php echo $slider_fetch['caption']; ?></textarea>
+                                                             <textarea  name="caption" class="form-control input-circle "  required><?php echo $slider_fetch['caption']; ?></textarea>
                                                              <!-- <small>Note: entry line </small> -->
                                                         </div>
                                                     </div> 
@@ -163,7 +163,7 @@
 															<input type="text" name="sub_heading[]"  class="form-control input-circle" value="<?php
                                                             if(count($caption) > 1){ echo $caption[2]; } ?>">
 														</div>
-													</div>*/ ?> 
+													</div>
                                                     <div class="form-group">
 														<label class="col-md-3 control-label">Add link</label>
 														<div class="col-md-6">
@@ -175,7 +175,7 @@
 														<div class="col-md-6">
 															<input type="text" name="youtube"  class="form-control input-circle" value="<?php echo $slider_fetch['youtube']; ?>" >
 														</div>
-													</div>  
+													</div>  */ ?> 
                                                    <!--  <div class="form-group">
 														<label class="col-md-3 control-label">Caption</label>
 														<div class="col-md-6">

@@ -20,7 +20,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Admin | Testimonial</title>
+        <title>Admin | Team</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
@@ -74,11 +74,11 @@
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <a href="staff_index.php">Testimonial Index</a>
+                                <a href="staff_index.php">Team Index</a>
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <span>Testimonial Update</span>
+                                <span>Team Update</span>
                             </li>
                         </ul>
                         <div class="page-toolbar">
@@ -104,7 +104,7 @@
 							<div class="portlet box green">
 									<div class="portlet-title">
 										<div class="caption">
-											<i class="fa fa-list"></i>Testimonial Update </div>
+											<i class="fa fa-list"></i>Team Update </div>
 										<div class="tools">
 											<a href="javascript:;" class="collapse"> </a>
 											<a href="#portlet-config" data-toggle="modal" class="config"> </a>
@@ -117,41 +117,41 @@
 											<form action="staff_updatecode" class="form-horizontal" method="post" enctype="multipart/form-data">
 												<div class="form-body">
 													<div class="form-group">
-														<label class="col-md-3 control-label">Testimonial Name</label>
+														<label class="col-md-3 control-label">Team Name</label>
 														<div class="col-md-6">
 															<input type="hidden" name="id" value="<?php echo $id; ?>">
 															<input type="text" name="staff_name" value="<?php echo $slider_fetch['staff_name']; ?>" class="form-control input-circle" required>
 														</div>
 													</div>
 													<div class="form-group">
-														<label class="col-md-3 control-label">Testimonial Designation</label>
+														<label class="col-md-3 control-label">Team Designation</label>
 														<div class="col-md-6">
 															<input type="hidden" name="id" value="<?php echo $id; ?>">
 															<input type="text" name="staff_designation" value="<?php echo $slider_fetch['staff_designation']; ?>" class="form-control input-circle" required>
 														</div>
 													</div>
-                                                    <div class="form-group">
-														<label class="col-md-3 control-label">Testimonial Detail</label>
+                                                   <!-- <div class="form-group">
+														<label class="col-md-3 control-label">Team Detail</label>
 														<div class="col-md-6">
 															<textarea row="2" name="staff_info"  class="form-control input-circle" required><?php echo $slider_fetch['staff_info']; ?> </textarea>
 														</div>
-													</div>
+													</div> -->
 													<div class="form-group">
 														<label class="col-md-3 control-label">Select Image</label>
 														<div class="col-md-6">
 															<input type="file" class="from-control input-circle" name="file"><br>
-															<caption>Image Size : 370 * 431</caption><br><br>
+															<!-- <caption>Image Size : 370 * 431</caption><br><br> -->
 															<input type="hidden" name="image"  value = "<?php echo $slider_fetch['staff_img']; ?>" class="from-control input-circle">
 															<img src="../images/<?php echo $slider_fetch['staff_img']; ?>" width="200px" >
 														</div>
                                                     </div>
                                                     <div class="form-group">
-                                                            <label class="col-md-3 control-label">Rating</label>
+                                                            <label class="col-md-3 control-label">Facebook</label>
                                                             <div class="col-md-6">
-                                                                <input type="number" name="facebook"  class="form-control input-circle" value="<?php echo $slider_fetch['facebook']; ?>"  >
+                                                                <input type="text" name="facebook"  class="form-control input-circle" value="<?php echo $slider_fetch['facebook']; ?>"  >
                                                             </div>
                                                         </div>
-                                                        <!-- <div class="form-group">
+                                                        <div class="form-group">
                                                             <label class="col-md-3 control-label">twitter</label>
                                                             <div class="col-md-6">
                                                                 <input type="text" name="twitter"  class="form-control input-circle" value="<?php echo $slider_fetch['twitter']; ?>" >
@@ -162,7 +162,7 @@
                                                             <div class="col-md-6">
                                                                 <input type="text" name="linkedin"  class="form-control input-circle" value="<?php echo $slider_fetch['linkedin']; ?>"  >
                                                             </div> 
-                                                        </div> -->
+                                                        </div> 
 													</div>
 													<div class="form-actions">
 													<div class="row">
