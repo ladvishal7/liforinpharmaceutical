@@ -28,8 +28,8 @@
                 <h6 class="footer-widget-title">Our Products</h6>
                 <nav>
                   <ul class="list-unstyled">
-                    <li><a href="#">Domestic Products</a></li>
-                    <li><a href="#"> Export Products</a></li>
+                    <li><a href="domestic-products">Domestic Products</a></li>
+                    <li><a href="export-products"> Export Products</a></li>
                     
                   </ul>
                 </nav>

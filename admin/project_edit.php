@@ -183,8 +183,10 @@
                                                 <div class="col-md-6">
                                                     <select name="category" class="form-control input-circle" required>
                                                         <?php while($row = mysqli_fetch_assoc($categories)){ ?>
-                                                            <option value="<?= $row['id'] ?>" <?php if($f['size'] ==  $row['id'] ){ echo 'selected'; } ?>><?= $row['name'] ?></option>
+                                                         <?php include_once'../fun.php';  $pname = parent_menu($row['parent_id']);  ?>
+                                                            <option value="<?= $row['id'] ?>" <?php if($f['category'] ==  $row['id'] ){ echo 'selected'; } ?>><?= $row['name'] ?> (<?= $pname['name']; ?>)</option>
                                                         <?php } ?>
+                                                       
                                                     </select>
                                                 </div>
                                             </div>

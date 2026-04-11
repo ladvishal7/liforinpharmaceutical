@@ -1,6 +1,12 @@
 <?php 
-  $active = 'product';
-  include('header.php') ?>
+    $active = 'product';
+    include('header.php');
+    $slug= $_GET['slug'];
+    $product = products($slug);  
+    $productDetail = mysqli_fetch_assoc($product);
+    $parentCategory = getcategory_slug($productDetail['category']);  
+    $category = getParentCategoryBySlug($parentCategory); 
+  ?>
     <!-- ========================
        page title 
     =========================== -->
@@ -13,12 +19,12 @@
                 <a href="index-2">Home</a>
               </li>
               <li class="breadcrumb-item">
-                <a href="about-us"> about us </a>
+                <a href="<?php if($category['slag'] == 'domestic_products'){ echo 'domestic-products';}else{ echo 'export-products';} ?>"> <?= $category['name'] ?> </a>
               </li>
               <li class="breadcrumb-item">
-                <a href="supplies">supplies</a>
+                <a href="product-listing?slug=<?= $parentCategory ?>"><?= ucwords($parentCategory) ?></a>
               </li>
-              <li class="breadcrumb-item active" aria-current="page">Green Tea</li>
+              <li class="breadcrumb-item active" aria-current="page"><?= $productDetail['heading'] ?></li>
             </ol>
           </nav>
         </div><!-- /.container -->
@@ -36,31 +42,30 @@
             <div class="row product-item-single">
               <div class="col-sm-6">
                 <div class="product-img">
-                  <img src="assets_front/images/products/2.jpg" class="zoomin" alt="product" loading="lazy">
+                  <img src="images/<?= $productDetail['fichimg'] ?>" class="zoomin" alt="<?= $productDetail['heading'] ?>" loading="lazy">
                 </div><!-- /.product-img -->
               </div>
               <div class="col-sm-6">
-                <h1 class="product-title">Lifo-Q Plus Tablets</h1>
+                <h1 class="product-title"><?= $productDetail['heading'] ?></h1>
                 <!-- /.product-meta-review -->
                 
                 <div class="product-desc">
-                  <p>This combination supplement supports heart health, boosts energy and ¡mmunity, enhances antioxidant protection, improves blood flow, and overall cellular and neurological well-being.
-                  </p>
+                  <p><?= $productDetail['description'] ?></p>
                 </div><!-- /.product-desc -->
                
                 <div class="product-meta-details">
                   <ul class="list-unstyled mb-30">
-                    <li><span>Company :</span> <span>LIFORIN PHARMACEUTICAL</span></li>
-                    <li><span>Component :</span> <span>CO-ENZYME QiO 300 MG + L ARGININE 200 MG + OMEGA 3 FATTY ACID (EPA 180 MG, DHA 120 MG) + LYCOPENE 10% 5000 MCG + ASTAXANTHIN 16 MG + ZINC 12.5 MG + B12 750 MCG + FOLIC ACID 5 MG+ SELENIUM (AS SODIUM SELENATE) 40 MCG</span></li>
-                    <li><span>Unit :</span> <span>Tablets</span></li>
-                    <li><span>Packing Type :</span> <span>10x10 Tab. Alu-Alu</span></li>
-                    <li><span>Production Capacity :</span> <span>10,000 (Per Day)</span></li>
-                    <li><span>Pack Insert/Leaflet :</span> <span>Yes OR No</span></li>
+                    <li><span>Company :</span> <span><?= $productDetail['location'] ?></span></li>
+                    <li><span>Component :</span> <span><?= $productDetail['client_name'] ?></span></li>
+                    <li><span>Unit :</span> <span> <?= ucwords($parentCategory) ?></span></li>
+                    <li><span>Packing Type :</span> <span> <?= $productDetail['duration'] ?></span></li>
+                    <li><span>Production Capacity :</span>  <span><?= $productDetail['size'] ?></span></li>
+                    <li><span>Pack Insert/Leaflet :</span>  <span><?= ($productDetail['leaflet'] == 1)? 'YES' : 'No' ?></span></li>
                   </ul>
                 </div><!-- /.product-meta-details -->
                 <div class="product-quantity d-flex mb-30">
                   
-                  <a class="btn btn-secondary" href="contact-us">Enquiry Product</a>
+                  <a class="btn btn-secondary" href="enquiry-now">Enquiry Product</a>
                 </div>
                 <!-- /.social-icons -->
               </div>

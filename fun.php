@@ -74,6 +74,18 @@
 		return mysqli_fetch_assoc($query) ?: null;
 	}
 
+	function getCategoryBySlug($slag) {
+		global $conn;
+
+		$slag = mysqli_real_escape_string($conn, $slag);
+
+		$query = mysqli_query($conn, "
+			select * from menu_master where  is_deleted = 0 AND is_active = 0  AND slag = '$slag'
+		");
+
+		return mysqli_fetch_assoc($query) ?: null;
+	}
+
 	function slider(){
 		global $conn;
 		$query=mysqli_query($conn,"select * from slider_master where is_active = 0 ");

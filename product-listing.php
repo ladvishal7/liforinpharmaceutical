@@ -1,6 +1,11 @@
 <?php 
     $active = 'product';
-    include('header.php') ?>
+    include('header.php');
+    $slug= $_GET['slug'];
+    $parentCategory = getParentCategoryBySlug($slug);  
+    $category = getCategoryBySlug($slug); 
+    $products = products_category($category['id']); 
+  ?>
     <!-- ========================
        page title 
     =========================== -->
@@ -9,9 +14,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 col-xl-5">
-            <h1 class="pagetitle-heading">Tablets</h1>
-            
-            
+            <h1 class="pagetitle-heading"><?= $category['name'] ?></h1>
           </div><!-- /.col-xl-5 -->
         </div><!-- /.row -->
       </div><!-- /.container -->
@@ -22,8 +25,8 @@
               <li class="breadcrumb-item">
                 <a href="index">Home</a>
               </li>
-              
-              <li class="breadcrumb-item active" aria-current="page">Tablets</li>
+              <li class="breadcrumb-item active" aria-current="page"><a href="<?php if($category['slag'] == 'domestic_products'){ echo 'domestic-products';}else{ echo 'export-products';} ?>"><?= $parentCategory['name'] ?></a></li>
+              <li class="breadcrumb-item active" aria-current="page"><?= $category['name'] ?></li>
             </ol>
           </nav>
         </div><!-- /.container -->
@@ -36,36 +39,49 @@
           <!-- /.col-lg-4 -->
           <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="row">
-            <h4 class="text-block-title">Tablets</h4>
-              <div class="col-12 col-md-12">
-                <div class="pricing-widget-layout1 mb-70">
-                  <h5 class="pricing-title">Generic Name<span class="pricing-title" style="float:right">Packing Type</span></h5>
+            <h4 class="text-block-title"><?= $category['name'] ?></h4>
+             <div class="col-12">
 
-                  <ul class="pricing-list list-unstyled mb-0">
-                    <li><span><a href="product_details">Lifo-Q Plus Tablets</a></span><span class="price">10x10 Tab. Alu-Alu</span></li>
-                    <li><span><a href="product_details">Lenticlav 625LB</a></span><span class="price">10x10 Tab. Alu-Alu</span></li>
-                    <li><span>Texolifplus</span><span class="price">10x10 Tab. Alu-Alu</span></li>
-                    <li><span>NeuroRin SL</span><span class="price">10x10 Tab. Alu-Alu</span></li>
-                    <li><span>CS NT</span><span class="price">10x10 Tab. Alu-Alu</span></li>
-                    <li><span>LifoMax Tablets</span><span class="price">10x10 Tab. Alu-Alu</span></li>
-                    <li><span>Ovarin Tablets</span><span class="price">10x10 Tab. Alu-Alu</span></li>
-                  </ul>
+                <?php 
+                $i = 0;
+
+                while($product = mysqli_fetch_assoc($products)){
+
+                    // open new block after every 7 items
+                    if($i % 7 == 0){
+                        echo '
+                        <div class="pricing-widget-layout1 mb-70">
+                            <h5 class="pricing-title">
+                                Generic Name
+                                <span style="float:right">Packing Type</span>
+                            </h5>
+                            <ul class="pricing-list list-unstyled mb-0">
+                        ';
+                    }
+                ?>
+                    <li>
+                        <span>
+                            <a href="product_details?slug=<?= $product['name'] ?>"><?= $product['heading'] ?></a>
+                        </span>
+                        <span class="price">10x10 Tab. Alu-Alu</span>
+                    </li>
+
+                <?php
+                    $i++;
+
+                    // close block after 7 items
+                    if($i % 7 == 0){
+                        echo '</ul></div>';
+                    }
+                }
+
+                // close last block if not closed
+                if($i % 7 != 0){
+                    echo '</ul></div>';
+                }
+                ?>
+
                 </div>
-              </div><!-- /.col-md-6 -->
-              <div class="col-12 col-md-12">
-                <div class="pricing-widget-layout2 mb-70">
-                  <h5 class="pricing-title">Generic Name<span class="pricing-title" style="float:right">Packing Type</span></h5>
-                  <ul class="pricing-list list-unstyled mb-0">
-                    <li><span><a href="#">Lifo-Q Plus Tablets</a></span><span class="price">10x10 Tab. Alu-Alu</span></li>
-                    <li><span><a href="#">Lenticlav 625LB</a></span><span class="price">10x10 Tab. Alu-Alu</span></li>
-                    <li><span>Texolifplus</span><span class="price">10x10 Tab. Alu-Alu</span></li>
-                    <li><span>NeuroRin SL</span><span class="price">10x10 Tab. Alu-Alu</span></li>
-                    <li><span>CS NT</span><span class="price">10x10 Tab. Alu-Alu</span></li>
-                    <li><span>LifoMax Tablets</span><span class="price">10x10 Tab. Alu-Alu</span></li>
-                    <li><span>Ovarin Tablets</span><span class="price">10x10 Tab. Alu-Alu</span></li>
-                  </ul>
-                </div>
-              </div><!-- /.col-md-6 -->
             </div><!-- /.row -->
             <!-- /.text-block -->
             <!-- /.accordion -->
