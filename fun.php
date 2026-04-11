@@ -24,6 +24,13 @@
 		return mysqli_fetch_assoc($query);
 	}
 
+	
+	function parent_menu($id){
+		global $conn;
+		$query=mysqli_query($conn,"select * from menu_master where is_active = 0 AND id = ".$id)or die(mysqli_error($conn));
+		return mysqli_fetch_assoc($query);
+	}
+
 	function menu($p_id = null){
 		global $conn;
 		if(empty($p_id)){

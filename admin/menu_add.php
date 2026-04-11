@@ -125,21 +125,21 @@
 														</div>
 													</div>
 												</div>
-
-                                                <?php if(!empty($level) && $level == 2){ ?>
+                                                
+                                                <?php /* if(!empty($level) && $level == 1){ ?>
                                                     <div class="form-group">
-                                                        <label class="col-md-3 control-label">Name</label>
+                                                        <label class="col-md-3 control-label">Parent Name</label>
                                                         <div class="col-md-6">
                                                             <select  name="text"  class="form-control input-circle" required>
                                                                 <?php foreach(menu() as $menu){ ?>
-                                                                <option value="<?= $menu['id'] ?>"><?= $menu['name'] ?></option>
+                                                                    <option value="<?= $menu['id'] ?>"><?= $menu['name'] ?></option>
                                                                 <?php } ?>
                                                                 <!-- <option value="2">Key Founder</option>
                                                                 <option value="3">List with PDF</option> -->
                                                             </select>
                                                         </div>
                                                     </div>
-                                                <?php } ?>
+                                                <?php } */ ?>
 
                                                
                                                     <!-- <div class="form-group">
@@ -176,20 +176,20 @@
                                                         </div>
                                                     </div>
                                                 <?php } ?>
-                                               <?php /* <div class="form-body">
+                                              <div class="form-body">
 													<div class="form-group">
 														<label class="col-md-3 control-label">Select Parent Category*</label>
 														<div class="col-md-6">
 															<select name="parent_id" id="parent_id" class="form-control input-circle" required>
                                                                 <option value=''>select</option>
                                                                 <?php 
-                                                                    $menu = mysqli_query($conn,"select * from menu_master where is_active = 0  AND is_deleted = 0");
+                                                                    $menu = mysqli_query($conn,"select * from menu_master where level = 1 AND is_active = 0  AND is_deleted = 0");
                                                                     $no = 1;
                                                                     while($menu_fetch = mysqli_fetch_assoc($menu)){
-                                                                        if($menu_fetch['id'] == 1 || $menu_fetch['id'] == 2){
+                                                                       // if($menu_fetch['id'] == 1 || $menu_fetch['id'] == 2){
                                                                 ?>
                                                                 <option value="<?php echo $menu_fetch['id']; ?>"> <?php echo $menu_fetch['name']; ?></option>
-                                                                <?php }  } ?>
+                                                                <?php } // } ?>
                                                                 <!-- <option value='1'>Wooden Products </option>
                                                                 <option value='2'>Packaging Products </option> -->
                                                             </select>
@@ -197,7 +197,7 @@
 													</div>
 												</div>
 
-                                                <div class="form-body">
+                                                  <?php /*<div class="form-body">
 													<div class="form-group">
 														<label class="col-md-3 control-label">Select sub Category </label>
 														<div class="col-md-6">

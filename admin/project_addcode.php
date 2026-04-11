@@ -12,6 +12,7 @@ session_start();
 		$category_id = $_POST['category'] ?? '';
 		$client_name = $_POST['client_name'] ?? '';
 		$size = $_POST['size'] ?? '';
+		$leaflet = $_POST['leaflet'] ?? '';
 		
 
 
@@ -21,7 +22,7 @@ session_start();
 		$date=date("Y-m-d h:i:s");
 
 		
-		$eve = "INSERT INTO project_master ( name, heading , description, location  ,  fichimg , category , date , duration , client_name , size, is_active , is_deleted , insert_at)VALUES('$title' , '$heading' , '$text' , '$location' ,   '$filename1' , '$category_id', '$date' , '$duration' , '$client_name', '$size', '0' , '0' , '$date') ";
+		$eve = "INSERT INTO project_master ( name, heading , description, location  ,  fichimg , category , date , duration , client_name , size, is_active , is_deleted , insert_at,leaflet)VALUES('$title' , '$heading' , '$text' , '$location' ,   '$filename1' , '$category_id', '$date' , '$duration' , '$client_name', '$size', '0' , '0' , '$date','$leaflet') ";
 		$run = mysqli_query($conn,$eve);
 		
 		if ($run)

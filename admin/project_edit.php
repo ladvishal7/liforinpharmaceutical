@@ -123,36 +123,45 @@
                                                     <input type="text" name="heading" value="<?php echo $f['heading']; ?>" class="form-control input-circle" required>
                                                 </div>
                                             </div>
-
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Date</label>
+                                                <label class="col-md-3 control-label">Description*</label>
                                                 <div class="col-md-6">
-                                                    <input type="date" name="date" value="<?php echo $f['date']; ?>" class="form-control input-circle" >
+                                                <textarea type="text" name="description" class="form-control input-circle ckeditor" cols="30" rows="3" required><?php echo $f['description'];?></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Location</label>
+                                                <label class="col-md-3 control-label">Component</label>
+                                                <div class="col-md-6">
+                                                    <textarea type="text" name="client_name"  rows="6"  class="form-control input-circle" ><?php echo $f['client_name']; ?></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Company</label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="location" value="<?php echo $f['location']; ?>" class="form-control input-circle" >
                                                 </div>
                                             </div>
+                                            
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Client Name</label>
-                                                <div class="col-md-6">
-                                                    <input type="text" name="client_name" value="<?php echo $f['client_name']; ?>" class="form-control input-circle" >
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-md-3 control-label">Project Duration</label>
+                                                <label class="col-md-3 control-label">Packing Type</label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="duration" value="<?php echo $f['duration']; ?>" class="form-control input-circle" >
                                                 </div>
                                             </div>
 
-                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Tag</label>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Production Capacity</label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="size" value="<?= $f['size'] ?>" class="form-control input-circle" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Pack Insert/Leaflet</label>
+                                                <div class="col-md-6">
+                                                    <select name="leaflet" class="form-control input-circle">
+                                                        <option value="1">Yes</option>
+                                                        <option value="0">No</option>
+                                                    </select>
                                                 </div>
                                             </div>
 
@@ -167,12 +176,7 @@
                                                 </div>
                                             </div>
                                             
-                                            <div class="form-group">
-                                                <label class="col-md-3 control-label">Description*</label>
-                                                <div class="col-md-6">
-                                                <textarea type="text" name="description" class="form-control input-circle ckeditor" cols="30" rows="3" required><?php echo $f['description'];?></textarea>
-                                                </div>
-                                            </div>
+                                            
                                         
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Category  *</label>

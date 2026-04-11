@@ -120,35 +120,45 @@
     													<input type="text" name="heading" value="" class="form-control input-circle" required>
     												</div>
     											</div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Description*</label>
+                                                    <div class="col-md-6">
+                                                    <textarea type="text" name="description" class="form-control input-circle ckeditor" cols="30" rows="3" required></textarea>
+                                                    </div>
+                                                </div>
+												
 												<div class="form-group">
-    												<label class="col-md-3 control-label">Date</label>
+    												<label class="col-md-3 control-label">Component </label>
     												<div class="col-md-6">
-    													<input type="date" name="date" value="" class="form-control input-circle" >
+    													<textarea type="text" name="client_name"   rows="6" value="" class="form-control input-circle" ></textarea>
     												</div>
     											</div>
-												<div class="form-group">
-    												<label class="col-md-3 control-label">Location</label>
+                                                <div class="form-group">
+    												<label class="col-md-3 control-label">Company</label>
     												<div class="col-md-6">
     													<input type="text" name="location" value="" class="form-control input-circle" >
     												</div>
     											</div>
 												<div class="form-group">
-    												<label class="col-md-3 control-label">Client Name</label>
-    												<div class="col-md-6">
-    													<input type="text" name="client_name" value="" class="form-control input-circle" >
-    												</div>
-    											</div>
-												<div class="form-group">
-    												<label class="col-md-3 control-label">Project Duration</label>
+    												<label class="col-md-3 control-label">Packing Type </label>
     												<div class="col-md-6">
     													<input type="text" name="duration" value="" class="form-control input-circle" >
     												</div>
     											</div>
                                                 
                                                 <div class="form-group">
-    												<label class="col-md-3 control-label">Tag</label>
+    												<label class="col-md-3 control-label">Production Capacity</label>
     												<div class="col-md-6">
     													<input type="text" name="size" value="" class="form-control input-circle" >
+    												</div>
+    											</div>
+                                                <div class="form-group">
+    												<label class="col-md-3 control-label">Pack Insert/Leaflet</label>
+    												<div class="col-md-6">
+    													<select name="leaflet" class="form-control input-circle">
+                                                            <option value="1">Yes</option>
+                                                            <option value="0">No</option>
+                                                        </select>
     												</div>
     											</div>
 
@@ -164,16 +174,10 @@
                                                     <div class="col-md-6">
                                                        <select name="category" class="form-control input-circle" required>
                                                             <?php while($f = mysqli_fetch_assoc($categories)){ ?>
-                                                                <option value="<?= $f['id'] ?>"><?= $f['name'] ?></option>
+                                                                <?php include_once'../fun.php';  $pname = parent_menu($f['parent_id']);  ?>
+                                                                <option value="<?= $f['id'] ?>"><?= $f['name'] ?> (<?= $pname['name']; ?>)</option>
                                                             <?php } ?>
                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                                 <div class="form-group">
-                                                    <label class="col-md-3 control-label">Description*</label>
-                                                    <div class="col-md-6">
-                                                    <textarea type="text" name="description" class="form-control input-circle ckeditor" cols="30" rows="3" required></textarea>
                                                     </div>
                                                 </div>
 										</div>

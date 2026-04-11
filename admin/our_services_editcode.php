@@ -16,13 +16,13 @@ session_start();
 		$text = str_replace("&apos;", "'", $_POST['text']);
 		$level = $_POST['level'] ?? 1;
 		
-		if(!empty($level) && $level == 2){
-			$level = 3;
-		}elseif(!empty($level)){
-			$level = 2;
-		}else{
-			$level = 1;
-		}
+		// if(!empty($level) && $level == 2){
+		// 	$level = 3;
+		// }elseif(!empty($level)){
+		// 	$level = 2;
+		// }else{
+		// 	$level = 1;
+		// }
 		
 		if(empty($_FILES['file']['name'])){
 			$filename1 = $_POST['image'];

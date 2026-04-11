@@ -1,6 +1,9 @@
 <?php 
   $active = 'product';
-  include('header.php') ?>
+  include('header.php') ;
+  $query=mysqli_query($conn,"select * from project_master where category_id=64 AND is_active = 0  ");
+   mysqli_fetch_assoc($query);  
+?>
     <!-- ========================
        page title 
     =========================== -->

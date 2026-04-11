@@ -3,18 +3,21 @@
     use PHPMailer\PHPMailer\SMTP;
     require_once "vendor/autoload.php";
 // session_start();
-
 // Process form submission
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $name = $_POST["name"];
+    $name = $_POST["name"]?? '';
     $email = $_POST["email"]??'';
     $phone = $_POST['phone']??'';
     $message = $_POST["message"]??'';
-    $project_name = $_POST['projectname']??"";
-
-    $subject = $_POST["subject"]??''; 
+    $service = $_POST['service']??"";
+    $location = $_POST["location"]??''; 
     
-    $type = $_POST['type'] ?? '';
+    $date = $_POST['date'] ?? '';
+    $time = $_POST['time'] ?? '';
+    $special_hours = $_POST['special_hours'] ?? '';
+    $address = $_POST['address'] ?? '';
+    $city = $_POST['city'] ?? '';
+    $zip = $_POST['zip'] ?? '';
 
     try{
         $mail = new PHPMailer();
@@ -27,24 +30,39 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->SMTPSecure = "tls"; // 'ssl' if using SSL encryption
         $mail->Port = 587; // Use the appropriate SMTP port
 		$mail->isHTML(true); // Set email format to HTML
-        $mail->setFrom("info@liforinpharmaceutical.com", "website"); // your email   info@liforinpharmaceutical.com
-        $mail->addAddress('info@liforinpharmaceutical.com', 'Website Contact from');                                       
+        $mail->setFrom("info@liforinpharmaceutical.com", "website"); // your email  
+        $mail->addAddress('info@liforinpharmaceutical.com', 'Website Enquiry from');                                       
         $mail->Subject = 'Email fom website';
         $mail->Body    = "From : $email <br/>";
         $mail->Body    .= "Name : $name <br/>";
         if(!empty($phone)){
         	$mail->Body    .= "Phone : $phone <br/>";
         }
-        if(!empty($project_name)){
-            $mail->Body    .= "Person : $project_name <br/>";
+        if(!empty($service)){
+            $mail->Body    .= "Service : $service <br/>";
         }
-        if(!empty($type)){
-            $mail->Body    .= "Website Type : $type <br/>";
+        if(!empty($location)){
+            $mail->Body    .= "Location : $location <br/>";
         }
-        if(!empty($subject)){
-            $mail->Body    .= "Subject : $subject <br/>";
+        if(!empty($date) || !empty($time)){
+            $mail->Body    .= "Date : $date Time : $time <br/>";
         }
-        $mail->Body    .= "Message : $message <br/>";
+        if(!empty($special_hours)){
+            $special_hours = $special_hours ?? [];
+            // convert array to string
+            $special_hours_text = implode(', ', $special_hours);
+            $mail->Body    .= "Special Hours and Access : $special_hours_text  <br/>";
+        }
+        if(!empty($address)){
+            $mail->Body    .= "Address : $address  <br/>";
+        }
+        if(!empty($city)){
+            $mail->Body    .= "City : $city  <br/>";
+        }
+        if(!empty($zip)){
+            $mail->Body    .= "Zip : $zip  <br/>";
+        }
+        $mail->Body    .= "Additional Details : $message <br/>";
 
         if (!$mail->send()) {
             echo "Mailer Error: " . $mail->ErrorInfo;

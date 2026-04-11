@@ -89,8 +89,6 @@ Sun: 9.00am to 12.00pm</a>
                     <a href="why-us" class="nav-item-link">Why Choose Us</a>
                   </li><!-- /.nav-item -->
                   <!-- /.nav-item -->
-                 
-
                   <!-- /.nav-item -->
                 </ul><!-- /.dropdown-menu -->
               </li><!-- /.nav-item -->
@@ -102,7 +100,10 @@ Sun: 9.00am to 12.00pm</a>
                 <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle nav-item-link <?= $active == 'product' ? 'active': '' ?>">Our Products</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a href="domestic-products" class="nav-item-link">Domestic Products</a></li>
-                    <li class="nav-item"><a href="export-products" class="nav-item-link">Export Products</a></li>
+                  <li class="nav-item"><a href="export-products" class="nav-item-link">Export Products</a></li>
+                  <?php /*foreach(menu() as $menu){ ?>
+                    <li class="nav-item"><a href="domestic-products?slug=<?= $menu['id'] ?>" class="nav-item-link"><?= $menu['name'] ?></a></li>
+                  <?php } */ ?>
                   <!-- /.nav-item -->
                 </ul><!-- /.dropdown-menu -->
               </li><!-- /.nav-item -->

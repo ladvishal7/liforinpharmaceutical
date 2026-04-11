@@ -151,9 +151,11 @@
 													<th> Name </th>
 													<th> Type </th>
 													<th> Edit </th>
+                                                    <?php  if($id != 1  ){ ?>
                                                     <th> Add </th>
+                                                    <?php } ?>
 													<th> Delete</th>
-													<th> Status</th>
+													<!-- <th> Status</th> -->
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -172,14 +174,14 @@
                                                     <?php  if($row['level'] == 1  ){ ?>
 													    <td><a href="menu.php?id=<?php echo $row['id']; ?>&level=<?php echo $level ?>"><i class="fa fa-pencil-square" style="font-size:30px;color:green;" aria-hidden="true"></i></a></td>
                                                     <?php }else{ ?>
-                                                        <td><a href="project.php?id=<?php echo $row['id']; ?>&type=<?php echo $row['text']; ?>"><i class="fa fa-pencil-square" style="font-size:30px;color:green;" aria-hidden="true"></i></a></td>
-                                                    <?php }  ?>
-                                                     <td><?php //if($row['id'] != 1 && $row['id'] != 2){ ?><a href="menu_delete.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Are You Sure ?');"><i class="fa fa-trash-o" style="font-size:30px;color:red;" aria-hidden="true"></i></a><?php //} ?></td> 
-													<td>
-                                                        <a class="" href="menu_delete.php?id1=<?php echo $row["id"];?>&status=<?php echo $row["is_active"] ?>" >
+                                                        <th></th>
+                                                    <?php } ?>
+                                                     <td><?php if($row['level'] != 1 ){ ?><a href="menu_delete.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Are You Sure ?');"><i class="fa fa-trash-o" style="font-size:30px;color:red;" aria-hidden="true"></i></a><?php } ?></td> 
+													<?php /*<td>
+                                                            <a class="" href="menu_delete.php?id1=<?php echo $row["id"];?>&status=<?php echo $row["is_active"] ?>" >
                                                                 <?php if($row["is_active"] == 0)
                                                                     { echo "<img src='images/eye.png' style='width:25px;'>"; }else if($row["is_active"]==1){ echo "<img src='images/deactive.png' style='width:25px;'>"; } ?></a>
-                                                                    </td>
+                                                    </td> */ ?>
                                                 </tr>
                                                <?php 
 											      $n++;

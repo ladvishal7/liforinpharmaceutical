@@ -17,6 +17,8 @@ session_start();
 		$id = $_POST['id'] ?? '';
 		$client_name = $_POST['client_name'] ?? '';
 		$duration = $_POST['duration'] ?? '';
+		$duration = $_POST['duration'] ?? '';
+		$leaflet = $_POST['leaflet'] ?? '';
 		$size = $_POST['size'] ?? '';
 	
 		if(empty($_FILES['file']['name'])){
@@ -28,7 +30,7 @@ session_start();
 		}
 
 
-		$eve = "UPDATE project_master set  name = '$title', heading = '$heading', description = '$text' , fichimg = '$filename1' , date = '$date' , location = '$location', client_name = '$client_name', category = '$category' , duration = '$duration' , size = '$size',is_active = '0' , is_deleted = 0 WHERE id= '".$id."'";
+		$eve = "UPDATE project_master set  name = '$title', heading = '$heading', description = '$text' , fichimg = '$filename1'  , location = '$location', client_name = '$client_name', category = '$category' , duration = '$duration' , size = '$size',is_active = '0' , is_deleted = 0, leaflet = '$leaflet' WHERE id= '".$id."'";
 		// echo $eve; exit;
 		$run = mysqli_query($conn,$eve);
 		// print_r($run);
