@@ -150,7 +150,7 @@
 	
 	function news(){
 		global $conn;
-		$query=mysqli_query($conn,"select * from review_master where is_active = 0  ORDER BY RAND()  LIMIT 5 ");
+		$query=mysqli_query($conn,"select * from review_master where is_active = 0  ORDER BY id DESC ");
 		return $query;
 	}
 

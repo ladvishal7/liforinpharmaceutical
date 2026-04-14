@@ -1,6 +1,6 @@
 <?php 
   $active = 'careers';
-  include('header.php') ?>
+  include('header.php'); ?>
     <!-- ========================
        page title 
     =========================== -->
@@ -57,7 +57,7 @@
                     </div>
                     <h4 class="job-title"><?= $career['review_name'] ?></h4>
                     <p class="job-desc"><?= $career['review_text'] ?></p>
-                    <a href="contact-us" class="btn btn-secondary btn-link">
+                    <a  href="javascript:void(0)" onclick="openModal()" class="btn btn-secondary btn-link">
                       <i class="plus-icon">+</i>
                       <span>Read More</span>
                     </a>
@@ -70,11 +70,30 @@
         <div class="row">
           <div class="col-md-12 col-lg-6 offset-lg-3 text-center mt-50">
             <p class="fw-bold px-xl-5 mb-0">Who are interested in our opening should apply or contact our company.
-              <a href="contact-us" class="color-primary underlined-text-secondary">Apply Now</a>
+              <a href="javascript:void(0)" onclick="openModal()" class="color-primary underlined-text-secondary">
+                  Apply Now
+              </a>
             </p>
           </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
       </div><!-- /.container -->
     </section><!-- /.careers -->
 
+    <div id="applyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            
+            <h3>Upload Resume</h3>
+
+            <form action="cv_upload.php" method="POST" enctype="multipart/form-data">
+
+                <input type="file" id="resume" name="resume"accept=".pdf,.doxc,.jpg,.jpeg,.png" required><br><br>
+
+                <button type="submit" class="btn btn-secondary btn-block btn-xhight">Submit</button>
+            </form>
+
+            <p id="errorMsg" style="color:red;visibility:hidden"></p>
+        </div>
+    </div>
+  
   <?php include('footer.php') ?>

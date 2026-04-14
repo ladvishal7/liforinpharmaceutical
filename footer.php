@@ -110,7 +110,57 @@
     </script>
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+      function openModal() {
+          document.getElementById("applyModal").style.display = "block";
+      }
 
+      function closeModal() {
+          document.getElementById("applyModal").style.display = "none";
+      }
+
+      // Validation + Submit
+      document.getElementById("resumeForm").addEventListener("submit", function(e) {
+          e.preventDefault();
+
+          let fileInput = document.getElementById("resume");
+          let file = fileInput.files[0];
+          let errorMsg = document.getElementById("errorMsg");
+
+          if (!file) {
+              errorMsg.innerText = "Please upload a file.";
+              return;
+          }
+
+          let allowedTypes = [
+              "application/pdf",
+              "image/jpeg",
+              "image/png",
+              "image/jpg"
+          ];
+
+          if (!allowedTypes.includes(file.type)) {
+              errorMsg.innerText = "Only PDF and Images (JPG, PNG) allowed.";
+              return;
+          }
+
+          // Optional size validation (5MB)
+          if (file.size > 5 * 1024 * 1024) {
+              errorMsg.innerText = "File size must be less than 5MB.";
+              errorMsg.style = visible;
+              return;
+          }
+
+          errorMsg.innerText = "";
+
+          // Submit form (AJAX or normal)
+          alert("Form submitted successfully!");
+
+          // Reset form
+          document.getElementById("resumeForm").reset();
+          closeModal();
+      });
+      </script>
 
 </body>
 </html>

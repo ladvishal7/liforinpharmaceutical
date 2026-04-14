@@ -19,6 +19,39 @@
   <link rel="stylesheet" href="assets_front/css/all.css">
   <link rel="stylesheet" href="assets_front/css/libraries.css">
   <link rel="stylesheet" href="assets_front/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"  />
+  <style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+        background: #fff;
+        padding: 20px;
+        margin: 10% auto;
+        width: 350px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .btn-xhight {
+        height: 50px;
+        line-height: 68px;
+        max-width: 170px;
+        margin-top: 10px;
+    }
+
+    .close {
+        float: right;
+        cursor: pointer;
+        font-size: 20px;
+        text-align: end;
+      }
+  </style>
 </head>
 
 <body>

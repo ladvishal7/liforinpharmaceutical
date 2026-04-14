@@ -5,7 +5,7 @@
        page title 
     =========================== -->
     <section class="page-title-layout1 page-title-light text-center bg-overlay bg-parallax">
-      <div class="bg-img"><img src="assets_front_front/images/page-titles/1.jpg" alt="background"></div>
+      <div class="bg-img"><img src="assets_front/images/page-titles/1.jpg" alt="background"></div>
       <div class="container">
         <div class="row">
           <div class="col-12 col-xl-6 offset-xl-3">
